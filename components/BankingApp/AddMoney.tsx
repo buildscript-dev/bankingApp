@@ -2,6 +2,7 @@
 
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import WalletTile from './WalletTile'
 
 const AddMoney = () => {
   return (
@@ -46,20 +47,22 @@ const AddMoney = () => {
 
 <Text style= {[styles.heading, {marginTop: 20, marginBottom: 20}]}>Add money to Neobank</Text>
 
-<View>
-
-<View>
-<Image source={require('./assets/images/wallet.png')} />
-    <Text>Reserved Wallet</Text>
-</View>
-<Text>Move your direct deposit</Text>
-<Text>Transfer from other bank</Text>
-<Text>Apple Pay</Text>
-<Text>Debit/Credit Card</Text>
-
-</View>
-
+    <View style={{ flex: 1, padding: 20 }}>
+      <WalletTile icon={require('../BankingApp/BankingAssets/Images/wallet.png')}
+      label={"Reserved Wallet"}/>
+      <WalletTile icon={require('../BankingApp/BankingAssets/Images/deposit.png')}
+      label={"Move your direct deposit"}/>
+      <WalletTile icon={require('../BankingApp/BankingAssets/Images/transfer.png')}
+      label={"Transfer from other bank"}/>
+      <WalletTile icon={require('../BankingApp/BankingAssets/Images/applepay.png')}
+      label={"Apple Pay"}/>
+      <WalletTile icon={require('../BankingApp/BankingAssets/Images/dcCard.png')}
+      label={"Debit/Credit Card"}/>
     </View>
+
+</View>
+
+
   )
 }
 
@@ -81,14 +84,21 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderWidth: 4
   },
+    subHeading:{
+    fontSize: 18,
+    color: 'black'
+  },
+  tileSheet:{
+  width: '100%',
+  height: 50,
+  borderRadius: 20,
+  paddingLeft: 20,
+  paddingRight: 20,
+alignItems: 'center',
+  backgroundColor: 'grey',
+  justifyContent: 'space-between'
 
-
-
-
-
-
-
-
+},
   transactionCard:{
      width: '100%',
     height: '100%',
@@ -158,10 +168,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 4,
   },
-  subHeading:{
-    fontSize: 16,
-    color: 'grey'
-  },
+
   input: {
     borderWidth: 1,
     borderColor: '#666',
