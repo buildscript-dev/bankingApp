@@ -48,7 +48,7 @@ const HomePage = () => {
     horizontal
     showsHorizontalScrollIndicator={false}
     contentContainerStyle={{
-      paddingHorizontal: 0, // 👈 no horizontal padding
+      paddingHorizontal: 0,
     }}
   >
     {[...Array(4)].map((_, i) => (
@@ -189,6 +189,7 @@ const HomePage = () => {
 }
 
 export default HomePage
+ 
 
 const styles = StyleSheet.create({
   container: {
@@ -197,6 +198,22 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FAF6E9',
   },
+  miniCardList:{
+    height: 140,
+    width: 140,
+    padding: 4,
+    borderRadius: 25,
+    backgroundColor: 'white',
+    borderWidth: 4
+  },
+
+
+
+
+
+
+
+
   transactionCard:{
      width: '100%',
     height: '100%',
@@ -243,7 +260,7 @@ const styles = StyleSheet.create({
    cardImage: {
     width: '100%',
     height: '100%',
-    borderRadius: 15,
+    borderRadius: 20,
   },
   card:{
     marginTop: 20,
