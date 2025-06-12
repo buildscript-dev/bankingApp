@@ -47,7 +47,7 @@ const AddMoney = () => {
 
 <Text style= {[styles.heading, {marginTop: 20, marginBottom: 20}]}>Add money to Neobank</Text>
 
-    <View style={{ flex: 1, padding: 20 }}>
+    <View>
       <WalletTile icon={require('../BankingApp/BankingAssets/Images/wallet.png')}
       label={"Reserved Wallet"}/>
       <WalletTile icon={require('../BankingApp/BankingAssets/Images/deposit.png')}
@@ -57,7 +57,7 @@ const AddMoney = () => {
       <WalletTile icon={require('../BankingApp/BankingAssets/Images/applepay.png')}
       label={"Apple Pay"}/>
       <WalletTile icon={require('../BankingApp/BankingAssets/Images/dcCard.png')}
-      label={"Debit/Credit Card"}/>
+      label={"Debit/Credit Card"}/> 
     </View>
 
 </View>

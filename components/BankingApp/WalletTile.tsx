@@ -3,13 +3,15 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-type wallet = {
-    icon: string,
-    lable: string,
-}
+type WalletTileProps = {
+  icon: any; // 👈 for require() images (use `ImageSourcePropType` for better safety)
+  label: string;
+  showArrow?: boolean;
+};
 
 
-const WalletTile = ({icon, label, showArrow = true}) => {
+
+const WalletTile:React.FC<WalletTileProps> = ({icon, label, showArrow = true}) => {
   return (
    <View style={styles.tileWrapper}>
          <View style={[styles.tileSheet, { flexDirection: 'row', justifyContent: 'space-between' }]}>
