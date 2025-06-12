@@ -2,8 +2,15 @@
 
 import { Alert, Button, FlatList, Image, ScrollView, StyleSheet, Text, TouchableHighlight, TouchableWithoutFeedback, View } from 'react-native'
 import React from 'react'
+import { useNavigation, createStaticNavigation} from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+
+
 
 const HomePage = () => {
+  const navigation = useNavigation();
+
   return (
     //fist layer
     <ScrollView>
@@ -28,7 +35,7 @@ const HomePage = () => {
     <Image style={{width:30, height: 30,}} source={{uri:'https://static.thenounproject.com/png/464129-200.png'}}/>
     </View>
     <TouchableHighlight 
-               onPress={() => Alert.alert("You don't have Money!")} 
+               onPress={() => navigation.navigate('Wallet')} 
                underlayColor={'red'}
                activeOpacity={0.6} 
                style={styles.balanceBtn}>
@@ -194,7 +201,7 @@ export default HomePage
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    paddingTop: 50,
+    paddingTop: 20,
     flex: 1,
     backgroundColor: '#FAF6E9',
   },
@@ -206,18 +213,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderWidth: 4
   },
-
-
-
-
-
-
-
-
   transactionCard:{
      width: '100%',
     height: '100%',
-    borderRadius: 15,
+    padding: 20,
+    borderRadius: 20,
+    backgroundColor: 'white'
   },
   transactionItem: {
   flexDirection: 'row',
