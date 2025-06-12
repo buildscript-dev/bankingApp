@@ -16,12 +16,26 @@ function RootStackNavigator() {
         component={HomePage} 
         options={{ headerShown: false }} 
       />
-      <RootStack.Screen 
-        name="Wallet" 
-        component={AddMoney} 
-      />
+ <RootStack.Screen 
+  name="Wallet"
+  component={AddMoney}
+  options={{
+    title: 'Wallet', // optional: change the title too
+    headerStyle: {
+      backgroundColor: '#FAF6E9', // dark mode vibes?
+    },
+    headerTintColor: 'black', // text/icon color
+    headerTitleStyle: {
+      fontWeight: 'semibold',
+      fontSize: 20,
+    },
+    headerShadowVisible: false, // remove that default shadow (optional)
+  }}
+/>
+
       <RootStack.Screen 
         name="Profile" 
+
         component={Profile} 
       />
     </RootStack.Navigator>
