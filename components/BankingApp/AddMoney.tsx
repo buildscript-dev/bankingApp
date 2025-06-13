@@ -3,6 +3,7 @@
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import WalletTile from './WalletTile'
+import { useNavigation } from '@react-navigation/native';
 
 const AddMoney = () => {
   return (
@@ -48,16 +49,23 @@ const AddMoney = () => {
 <Text style= {[styles.heading, {marginTop: 20, marginBottom: 20}]}>Add money to Neobank</Text>
 
     <View>
+
+
       <WalletTile icon={require('../BankingApp/BankingAssets/Images/wallet.png')}
-      label={"Reserved Wallet"}/>
+      label={"Reserved Wallet"}
+      location='Reserved'/>
       <WalletTile icon={require('../BankingApp/BankingAssets/Images/deposit.png')}
-      label={"Move your direct deposit"}/>
+      label={"Move your direct deposit"}
+      location='Deposit'/>
       <WalletTile icon={require('../BankingApp/BankingAssets/Images/transfer.png')}
-      label={"Transfer from other bank"}/>
+      label={"Transfer from other bank"}
+      location='Transfer'/>
       <WalletTile icon={require('../BankingApp/BankingAssets/Images/applepay.png')}
-      label={"Apple Pay"}/>
+      label={"Apple Pay"}
+      location='ApplePay'/>
       <WalletTile icon={require('../BankingApp/BankingAssets/Images/dcCard.png')}
-      label={"Debit/Credit Card"}/> 
+      label={"Debit/Credit Card"}
+      location='CreditCard'/> 
     </View>
 
 </View>

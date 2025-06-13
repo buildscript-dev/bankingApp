@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const Transfer = () => {
+const Deposit = () => {
   return (
     <View>
-      <Text>Transfer</Text>
+      <Text>Deposit</Text>
     </View>
   )
 }
 
-export default Transfer
+export default Deposit
 
 const styles = StyleSheet.create({})

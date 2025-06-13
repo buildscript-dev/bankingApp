@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const Transfer = () => {
+const ApplePay = () => {
   return (
     <View>
-      <Text>Transfer</Text>
+      <Text>ApplePay</Text>
     </View>
   )
 }
 
-export default Transfer
+export default ApplePay
 
 const styles = StyleSheet.create({})

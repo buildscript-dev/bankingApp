@@ -1,21 +1,26 @@
 
 
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
+import { useNavigation } from '@react-navigation/native';
 
 type WalletTileProps = {
   icon: any; // 👈 for require() images (use `ImageSourcePropType` for better safety)
   label: string;
   showArrow?: boolean;
+  location: string;
 };
 
 
 
-const WalletTile:React.FC<WalletTileProps> = ({icon, label, showArrow = true}) => {
+const WalletTile:React.FC<WalletTileProps> = ({icon, label, showArrow = true, location}) => {
+    const navigation = useNavigation<any>();
   return (
-   <View style={styles.tileWrapper}>
-         <View style={[styles.tileSheet, { flexDirection: 'row', justifyContent: 'space-between' }]}>
-
+   <View style={styles.tileWrapper} >
+        <TouchableOpacity
+        activeOpacity={0.8}
+        onPress={() => navigation.navigate(location)}>
+           <View style={[styles.tileSheet, { flexDirection: 'row', justifyContent: 'space-between' }]}>
         {/* Left side: Icon + Label */}
    <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <Image source={icon} style={styles.icon} />
@@ -29,6 +34,7 @@ const WalletTile:React.FC<WalletTileProps> = ({icon, label, showArrow = true}) =
             style={styles.icon}
           />
         )}   </View>
+        </TouchableOpacity>
    </View>
   )
 }
